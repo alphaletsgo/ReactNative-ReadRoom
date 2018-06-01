@@ -1,0 +1,16 @@
+# React-Native 采坑篇
+### Application * has not been registered.
+错误描述：
+```sh
+Loading dependency graph...npm ERR! code ELIFECYCLE
+npm ERR! errno 11
+npm ERR! smp001@0.0.1 start: `node node_modules/react-native/local-cli/cli.js start`
+npm ERR! Exit status 11
+npm ERR!
+npm ERR! Failed at the smp001@0.0.1 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+```
+遇到这种问题首先怀疑端口被占用问题，首先使用`sudo lsof -i :8081` 检查8081端口，查看有没有被占用，如果发现被占用可以使用`kill -9 端口号`来杀掉进程。
+
+
+`ps aux | grep react-native`
